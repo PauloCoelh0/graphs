@@ -1,1 +1,4 @@
-## Falta adicionar as seguintes estruturas
+## Falta adicionar as seguintes estruturas:
+ 
+- Queues
+- Stacks
