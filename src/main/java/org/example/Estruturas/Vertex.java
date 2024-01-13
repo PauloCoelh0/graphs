@@ -1,4 +1,4 @@
-package org.example;
+package org.example.Estruturas;
 
 public class Vertex {
     String name;

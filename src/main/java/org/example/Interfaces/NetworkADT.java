@@ -1,4 +1,6 @@
-package org.example;
+package org.example.Interfaces;
+
+import org.example.Interfaces.GraphADT;
 
 /**
  * NetworkADT defines the interface to a network.

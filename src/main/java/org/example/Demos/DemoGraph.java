@@ -1,6 +1,6 @@
-package org.example;
+package org.example.Demos;
 
-public class Main {
+public class DemoGraph {
     public static void main(String[] args) {
         System.out.println("Hello world!");
     }
