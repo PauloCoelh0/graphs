@@ -1,5 +1,6 @@
 package org.example.Estruturas;
 import org.example.Exceptions.ElementNotFoundException;
+import org.example.Exceptions.EmptyCollectionException;
 import org.example.Interfaces.ListADT;
 
 import java.util.ConcurrentModificationException;
@@ -43,9 +44,9 @@ public abstract class ArrayList<T> implements ListADT<T> {
     }
 
     @Override
-    public T removeFirst() {
+    public T removeFirst() throws EmptyCollectionException {
         if (isEmpty()) {
-            throw new NoSuchElementException("Lista esta vazia.");
+            throw new EmptyCollectionException("Lista esta vazia.");
         }
 
         T result = list[0];
@@ -61,9 +62,9 @@ public abstract class ArrayList<T> implements ListADT<T> {
     }
 
     @Override
-    public T last() {
+    public T last() throws EmptyCollectionException {
         if (isEmpty()) {
-            throw new NoSuchElementException("Lista esta vazia.");
+            throw new EmptyCollectionException("Lista esta vazia.");
         }
         return list[rear - 1];
     }
@@ -84,7 +85,7 @@ public abstract class ArrayList<T> implements ListADT<T> {
     @Override
     public T remove(T element) throws ElementNotFoundException {
         if (isEmpty()) {
-            throw new NoSuchElementException("Lista esta vazia.");
+            throw new ElementNotFoundException("Lista esta vazia.");
         }
 
         int index = -1;
@@ -113,10 +114,10 @@ public abstract class ArrayList<T> implements ListADT<T> {
     }
 
     @Override
-    public T first() {
+    public T first() throws EmptyCollectionException {
 
         if (isEmpty()) {
-            throw new NoSuchElementException("Lista esta vazia.");
+            throw new EmptyCollectionException("Lista esta vazia.");
         }
 
         return list[0];
@@ -136,6 +137,14 @@ public abstract class ArrayList<T> implements ListADT<T> {
     @Override
     public Iterator<T> iterator() {
         return new ArrayListIterator();
+    }
+
+    protected void expandCapacity() {
+        T[] larger = (T[]) (new Object[list.length * 2]);
+        for (int i = 0; i < list.length; i++) {
+            larger[i] = list[i];
+        }
+        list = larger;
     }
 
     private class ArrayListIterator implements Iterator<T> {
@@ -192,13 +201,5 @@ public abstract class ArrayList<T> implements ListADT<T> {
                 System.out.println("Elemento não encontrado: " + e.getMessage());
             }
         }
-    }
-
-    protected void expandCapacity() {
-        T[] larger = (T[]) (new Object[list.length * 2]);
-        for (int i = 0; i < list.length; i++) {
-            larger[i] = list[i];
-        }
-        list = larger;
     }
 }

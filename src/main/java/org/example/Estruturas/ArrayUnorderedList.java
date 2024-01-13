@@ -5,6 +5,9 @@ import org.example.Interfaces.UnorderedListADT;
 
 public class ArrayUnorderedList<T> extends ArrayList<T> implements UnorderedListADT<T> {
 
+
+// Isto vai ser utilizado para as arvores
+
 //    public ArrayUnorderedList() {
 //        super();
 //    }

@@ -2,22 +2,22 @@ package org.example.Nodes;
 
 public class DoublyNode<T> {
 
-    private T data;
+    private T element;
     private DoublyNode<T> next;
     private DoublyNode<T> prev;
 
-    public DoublyNode(T data) {
-        this.data = data;
+    public DoublyNode(T element) {
+        this.element = element;
         this.next = null;
         this.prev = null;
     }
 
     public T getData() {
-        return data;
+        return element;
     }
 
-    public void setData(T data){
-        this.data = data;
+    public void setData(T element){
+        this.element = element;
     }
 
     public DoublyNode<T> getNext() {

@@ -13,6 +13,11 @@ public class DemoDoublyLinkedList {
         list.insertAtHead(2);
         list.insertAtHead(3);
 
+        System.out.print("Lista printFoward: ");
+        list.printForward();
+        System.out.print("Lista printBackward: ");
+        list.printBackward();
+
         System.out.println("List after inserting at the head:");
         list.printList();
 
