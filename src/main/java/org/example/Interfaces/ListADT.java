@@ -7,7 +7,6 @@ import java.util.Iterator;
 
 public interface ListADT<T> extends Iterable{
 
-
     public T removeFirst() throws EmptyCollectionException;
 
     public T removeLast() throws EmptyCollectionException;
