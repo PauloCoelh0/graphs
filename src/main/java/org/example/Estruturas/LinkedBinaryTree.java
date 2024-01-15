@@ -45,8 +45,24 @@ public class LinkedBinaryTree<T> implements BinaryTreeADT<T> {
     }
 
     @Override
-    public boolean contains(T targetElement) throws ElementNotFoundException {
-        return find(targetElement) != null;
+    public boolean contains(T targetElement) {
+        // Start from the root and compare each node
+        BinaryTreeNode<T> current = root;
+        Comparable<T> comparableElement = (Comparable<T>) targetElement;
+
+        while (current != null) {
+            int comparison = comparableElement.compareTo(current.getElement());
+
+            if (comparison == 0) {
+                return true; // Found the element
+            } else if (comparison < 0) {
+                current = current.getLeft(); // Go left in the tree
+            } else {
+                current = current.getRight(); // Go right in the tree
+            }
+        }
+
+        return false; // Element is not in the tree
     }
 
     @Override
