@@ -1,10 +1,14 @@
 package org.example.Classes;
 
+import org.example.Estruturas.ArrayUnorderedList;
+
 public class Vertex<T> {
-    private T data;
+    T data;
+    ArrayUnorderedList<Edge<T>> edges;
 
     public Vertex(T data) {
         this.data = data;
+        edges = new ArrayUnorderedList<>();
     }
 
     public T getData() {
@@ -13,5 +17,13 @@ public class Vertex<T> {
 
     public void setData(T data) {
         this.data = data;
+    }
+
+    public ArrayUnorderedList<Edge<T>> getEdges() {
+        return edges;
+    }
+
+    public void setEdges(ArrayUnorderedList<Edge<T>> edges) {
+        this.edges = edges;
     }
 }

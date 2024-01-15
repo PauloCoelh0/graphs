@@ -1,17 +1,13 @@
 package org.example.Classes;
 
 public class Edge<T> {
-    private Vertex<T> vertex1;
-    private Vertex<T> vertex2;
-    private double weight;
+    Vertex<T> vertex1;
+    Vertex<T> vertex2;
 
-    public Edge(Vertex<T> vertex1, Vertex<T> vertex2, double weight) {
+    public Edge(Vertex<T> vertex1, Vertex<T> vertex2) {
         this.vertex1 = vertex1;
         this.vertex2 = vertex2;
-        this.weight = weight;
     }
-
-    // Getters e setters
 
     public Vertex<T> getVertex1() {
         return vertex1;
@@ -27,13 +23,5 @@ public class Edge<T> {
 
     public void setVertex2(Vertex<T> vertex2) {
         this.vertex2 = vertex2;
-    }
-
-    public double getWeight() {
-        return weight;
-    }
-
-    public void setWeight(double weight) {
-        this.weight = weight;
     }
 }
