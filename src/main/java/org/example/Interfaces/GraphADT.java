@@ -1,5 +1,7 @@
 package org.example.Interfaces;
 
+import org.example.Exceptions.EmptyCollectionException;
+
 import java.util.Iterator;
 
 /**
@@ -66,7 +68,7 @@ public interface GraphADT<T> {
      * * @return an iterator that contains the shortest
      * * path between the two vertices
      */
-    Iterator iteratorShortestPath(T startVertex, T targetVertex);
+    Iterator iteratorShortestPath(T startVertex, T targetVertex) throws EmptyCollectionException;
 
     /**
      * * Returns true if this graph is empty, false otherwise.
@@ -80,7 +82,7 @@ public interface GraphADT<T> {
      * *
      * * @return true if this graph is connected
      */
-    boolean isConnected();
+    boolean isConnected() throws EmptyCollectionException;
 
     /**
      * * Returns the number of vertices in this graph.
