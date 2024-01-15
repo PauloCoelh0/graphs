@@ -107,16 +107,16 @@ public class GraphMatrix<T> implements GraphADT<T> {
         }
 
         for (int i = 0; i < numVertices; i++) {
-            visited[i] =
-                    false;
+            visited[i] = false;
         }
+
         traversalStack.push(startIndex);
         resultList.addToRear(vertices[startIndex]);
         visited[startIndex] = true;
 
         while (!traversalStack.isEmpty()) {
-            x = traversalStack.peek(); // Utiliza a variável x já declarada
-            found = false; // Utiliza a variável found já declarada
+            x = traversalStack.peek();
+            found = false;
 
             for (int i = 0; (i < numVertices) && !found; i++) {
                 if (adjMatrix[x][i] && !visited[i]) {
@@ -126,11 +126,10 @@ public class GraphMatrix<T> implements GraphADT<T> {
                     found = true;
                 }
             }
-            if (!found) {
+            if (!found && !traversalStack.isEmpty()) {
                 traversalStack.pop();
             }
         }
-
         return resultList.iterator();
     }
 

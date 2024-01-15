@@ -29,7 +29,7 @@ public class LinkedStack<T> implements StackADT<T> {
         }
         T data = top.getElement();
         top = top.getNext();
-        count++;
+        count--;  // Corrigido para decrementar a contagem
         return data;
     }
 
