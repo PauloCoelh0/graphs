@@ -1,6 +1,6 @@
 package org.example.Demos;
 
-import org.example.Estruturas.GraphMatrix;
+import org.example.Estruturas.Graph;
 import org.example.Exceptions.EmptyCollectionException;
 
 import java.util.Iterator;
@@ -9,7 +9,7 @@ public class DemoGrafoNaoPesado {
 
     public static void main(String[] args) {
         // Criação do grafo
-        GraphMatrix<String> graph = new GraphMatrix<>();
+        Graph<String> graph = new Graph<>();
 
         // Adição de vértices
         graph.addVertex("A");
